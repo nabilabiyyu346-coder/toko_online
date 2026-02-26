@@ -1,0 +1,78 @@
+:root{--bg:#f7f7fb;--card:#fff;--accent:#6b5b95;--muted:#666}
+*{box-sizing:border-box}
+body{font-family:Poppins, Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial; margin:0; background:linear-gradient(180deg,#fbfbfd 0%, var(--bg) 100%); color:#111; -webkit-font-smoothing:antialiased}
+.container{max-width:1200px;margin:32px auto;padding:20px}
+.header{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 20px;background:transparent}
+.header h2{margin:0;font-weight:700;letter-spacing:0.2px}
+.btn{background:var(--accent);color:#fff;padding:10px 14px;border:0;border-radius:999px;cursor:pointer;font-weight:600;transition:transform .15s ease,box-shadow .15s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(107,91,149,0.12)}
+.btn.secondary{background:transparent;color:var(--muted);border:1px solid #e9e7ef;margin-right:8px}
+.card{background:var(--card);padding:16px;border-radius:12px;box-shadow:0 10px 30px rgba(18,18,24,0.06);transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-4px)}
+.products-list{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.products-list li{display:flex;justify-content:space-between;padding:12px;border-radius:10px;border:1px solid #f3f3f6;background:#fff;align-items:center}
+.product-name{font-weight:600}
+.product-price{color:var(--accent);font-weight:600}
+.small{font-size:0.9rem;color:var(--muted)}
+.login-container{max-width:420px;margin:60px auto;padding:28px;background:var(--card);border-radius:12px;box-shadow:0 12px 32px rgba(18,18,24,0.08)}
+.login-container input{width:100%;padding:12px;margin:10px 0;border:1px solid #eee;border-radius:8px}
+.login-container button{width:100%;padding:12px;margin-top:8px;border-radius:999px}
+.message{color:#b22222;margin-top:8px}
+
+/* Home / hero styles */
+.hero{padding:28px 0;border-radius:0}
+.hero-inner{display:flex;gap:20px;align-items:center}
+.hero h1{font-size:2rem;margin:0}
+.hero .lead{color:var(--muted);margin-top:8px}
+.hero-image{width:420px;padding:8px}
+@media (max-width:880px){.hero-inner{flex-direction:column}.hero-image{width:100%}}
+
+.grid-products{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+@media (max-width:900px){.grid-products{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.grid-products{grid-template-columns:1fr}}
+.product-card{padding:10px}
+
+/* Product card hover animation */
+.product-card{transition:transform .18s ease,box-shadow .18s ease}
+.product-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(18,18,24,0.08)}
+
+/* subtle fade-up entrance */
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.fade-up{animation:fadeUp .45s ease both}
+
+/* header nav spacing */
+.header a{margin-left:8px}
+
+/* utility */
+.lead{font-size:1.05rem;color:var(--muted)}
+
+/* color tweaks to better match example */
+:root{--accent:#7c5cc4;--accent-600:#6b48b8}
+
+.hero{background:linear-gradient(90deg, rgba(124,92,196,0.06), rgba(255,255,255,0)); padding:36px 0}
+.hero h1{font-size:2.4rem;line-height:1.05;color:#0f1724}
+.hero .lead{font-size:1.05rem;color:#51515b}
+
+.product-price{color:var(--accent);font-weight:700}
+
+/* subtle button gradient */
+.btn{background:linear-gradient(180deg,var(--accent),var(--accent-600));}
+
+/* smooth image load */
+img{opacity:0;transform:translateY(6px);transition:opacity .42s ease,transform .42s ease}
+img[src]{opacity:1;transform:none}
+
+/* small responsive refinements */
+@media (max-width:880px){
+	.container{padding:12px}
+	.hero h1{font-size:1.6rem}
+}
+
+/* responsive nav */
+.nav{display:flex;gap:8px;align-items:center}
+@media (max-width:720px){
+	.nav{position:absolute;top:72px;left:0;right:0;background:var(--card);flex-direction:column;padding:12px;transform:translateY(-20px);opacity:0;pointer-events:none;border-bottom:1px solid #f2f2f6}
+	.nav.open{transform:translateY(0);opacity:1;pointer-events:auto}
+}
+
+.cart-badge{position:absolute;right:-8px;top:-8px;background:#ff4d6d;color:white;border-radius:999px;padding:4px 8px;font-size:0.8rem}
