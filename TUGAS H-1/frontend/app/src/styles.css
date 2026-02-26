@@ -76,3 +76,15 @@ img[src]{opacity:1;transform:none}
 }
 
 .cart-badge{position:absolute;right:-8px;top:-8px;background:#ff4d6d;color:white;border-radius:999px;padding:4px 8px;font-size:0.8rem}
+/* Login Modal Styles */
+input:disabled{background-color:#f5f5f5;cursor:not-allowed;color:#999}
+
+button:disabled{opacity:0.7;cursor:not-allowed}
+
+.btn secondary:hover{background:rgba(0,0,0,0.05)}
+
+/* Cart Icon Responsive */
+@media (max-width:720px){
+	.nav{position:absolute;top:72px;left:0;right:0;background:var(--card);flex-direction:column;padding:12px;transform:translateY(-20px);opacity:0;pointer-events:none;border-bottom:1px solid #f2f2f6}
+	.nav.open{transform:translateY(0);opacity:1;pointer-events:auto}
+}
